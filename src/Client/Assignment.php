@@ -48,7 +48,7 @@ class Assignment
     private function getToken(): string
     {
         try {
-            $fields = include('Config/fields.php');
+            $fields = include('config/fields.php');
             $this->curl->setUrl(self::URI . 'register');
             $result = json_decode($this->curl->sendRequest($fields, 'POST'), true)['data'] ?? [];
             $register = new RegisterModel(
